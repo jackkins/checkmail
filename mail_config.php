@@ -31,16 +31,11 @@ $notification_email_config = "denisbrah@gmail.com";
 
 $rules_config = array(
 	"subject" => array(
-		"pattern" => "Title test",
+		"pattern" => "wqwq",
 		"template_id" => "subject",
 		"notification_template_id" => "notification_subject",
 		"and" => array(
-			"sender" => array(
-				"pattern" => array("sined199@gmail.com"),
-				"and" => array(
-					"capslock" => array()
-				)
-			)
+			
 		)
 	),
 	"capslock" => array(
@@ -48,7 +43,7 @@ $rules_config = array(
 		"notification_template_id" => "notification_capslock"
 	),
 	"keywords" => array(
-		"pattern" => array(),
+		"pattern" => array("21"),
 		"template_id" => "keywords",
 		"notification_template_id" => "notification_keywords"
 	),

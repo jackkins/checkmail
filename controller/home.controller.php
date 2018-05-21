@@ -183,6 +183,75 @@ class ControllerHome extends MainController{
 		}
 	}
 
+	public function checkconfig(){
+
+		$arr = array(
+			'count'=>"test",
+			'username'=>"test",
+			'email'=>"test",
+			'mail'=>"test",
+			'buyer_name'=>"test"
+		);
+
+		$result = $this->getConfig($arr);
+		$ct = $this->loadModel("configTest");
+
+		$ct->rules = $result['rules_config'];
+		$ct->templates = $result['template_config'];
+		$ct->notif_email = $result['notification_email_config'];
+
+		$ct->run();
+
+		$logs = $ct->getLogs();
+
+		$view = "";
+
+		if(count($logs['warning'])>0){
+			$view .= "Предупреждение:<br><br>";
+			for ($i=0; $i < count($logs['warning']); $i++) { 
+				$view .= $logs['warning'][$i]."<br>";
+			}
+		}
+		$view .= "<br>";
+		if(count($logs['error'])>0){
+			$view .= "Ошибки:<br><br>";
+			for ($i=0; $i < count($logs['error']); $i++) { 
+				$view .= $logs['error'][$i]."<br>";
+			}
+		}
+
+		echo $view;
+		// 
+
+
+		// if(count($result['rules_config'])>0){
+		// 	foreach ($result['rules_config'] as $key => $value) {
+		// 		switch ($key) {
+		// 			case 'subject':
+						
+		// 				break;
+		// 			case 'capslock':
+
+		// 				break;
+		// 			case 'sender':
+
+		// 				break;
+		// 			case 'keywords':
+
+		// 				break;
+		// 			case 'mes_number':
+
+		// 				break;
+		// 		}
+		// 		if(!empty($value['pattern']) && $value['pattern']!=""){
+		// 			echo $key." !empty<br>";
+		// 		}
+		// 		else echo $key." empty<br>";
+		// 	}
+		// }
+
+	}
+
 
 	private function viewpage(){
 	}
