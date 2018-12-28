@@ -26,12 +26,7 @@ define("DB_USER_PASSWORD", ""); // пароль пользователя
 	
 define("MAIL_IMAP_HOST", "{imap.gmail.com:993/imap/ssl/novalidate-cert}Inbox"); // путь подключения к IMAP серверу
 define("MAIL_SMTP_HOST", "ssl://smtp.gmail.com");
-define("MAIL_USER", "denisbrah@gmail.com");
-define("MAIL_PASSWORD", "862479315zyzzzyzzzyzz11");
-
-
-/**
-define("MAIL_IMAP_HOST", "{imap.gmail.com:993/imap/ssl/novalidate-cert}Inbox"); // путь подключения к IMAP серверу (прием сообщений)
-*/
+define("MAIL_USER", "");
+define("MAIL_PASSWORD", "");
 
 
